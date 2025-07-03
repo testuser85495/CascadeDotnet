@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CascadeDemo.Models.Employee
+@{
+}
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body>
+    <form asp-action="Create" method="post">
+        <div class="container">
+            @* firstname *@
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label class="col-form-label">FirstName</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="Enter First Name">
+                </div>
+            </div>
+            @* Lastname *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">LastName</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Enter Last Name">
+                </div>
+            </div>
+            @* Email *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">Email</label>
+                </div>
+                <div class="col-auto">
+                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Enter your Email">
+                </div>
+            </div>
+            @* gender *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="form-label">Gender</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="Gender" value="Male" />
+                    <label class="form-check-label" for="Gender">Male</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="Gender" value="Female" />
+                    <label class="form-check-label" for="Gender">Female</label>
+                </div>
+            </div>
+            @* Age *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">Age</label>
+                </div>
+                <div class="col-auto">
+                    <input type="number" id="Age" name="Age" class="form-control" placeholder="Enter your Age">
+                </div>
+            </div>
+            @* Phone *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">Phone</label>
+                </div>
+                <div class="col-auto">
+                    <input type="number" id="Phone" name="Phone" class="form-control" placeholder="Enter your Phone NO.">
+                </div>
+            </div>
+            @* Country Drowpdown *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">Country</label>
+                </div>
+                <div class="col-auto">
+                    <select name="CountryId" id="Country" class="form-select">
+                        <option value="">Select Country</option>
+                    </select>
+                </div>
+            </div>
+            @* State Drowpdown *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">Country</label>
+                </div>
+                <div class="col-auto">
+                    <select name="StateId" id="State" class="form-select">
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+            </div>
+            @* City Drowpdown *@
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                    <label class="col-form-label">City</label>
+                </div>
+                <div class="col-auto">
+                    <select name="CityId" id="City" class="form-select">
+                        <option value="">Select City</option>
+                    </select>
+                </div>
+            </div>
+
+            @* Save Button *@
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </div>
+    </form>
+    </body>
+    </html>
+
+<script src="~/js/javascript.js"></script>

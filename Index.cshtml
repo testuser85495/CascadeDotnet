@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+@model IEnumerable<CascadeDemo.Models.Employee>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Employee List</title>
+    </head>
+
+<body>
+    @if (TempData["Msg"] != null)
+    {
+        <p class="alert alert-info">
+            @TempData["Msg"]
+        </p>
+    }
+        <a href="@Url.Action("Create")" class="btn btn-primary mb-3">Add New</a>
+    
+    <table class="table tab-content table-bordered">
+        <tr>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Email</td>
+            <td>Gender</td>
+            <td>Age</td>
+            <td>Mobile</td>
+            <td>Country</td>
+            <td>State</td>
+            <td>City</td>
+            <td colspan="2">Action</td>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Gender</td>
+                    <td>@item.Age</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Country?.CountryName</td>
+                    <td>@item.State?.StateName</td>
+                    <td>@item.City?.CityName</td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.EmpId })" class="btn btn-primary">Edit</a> ||
+                        <a href="@Url.Action("Delete", new { id = item.EmpId })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </body>
+    </html>
